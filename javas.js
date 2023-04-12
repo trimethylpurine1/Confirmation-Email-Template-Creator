@@ -1,6 +1,8 @@
-const startDate = document.getElementById('coach')
 
+console.log('execuitng the script')
 
+let myTitle = document.getElementById('title')
+/*
 function gatherAnswer(){
     return startDate
 }
@@ -16,4 +18,8 @@ function theCombiningFunction(){
     produceAnswer()
 }
 
-document.getElementById('sub').addEventListener('click', theCombiningFunction())
+function returnText(){
+    let input = document.getElementById('coach').value 
+    alert(input)
+}
+*/
