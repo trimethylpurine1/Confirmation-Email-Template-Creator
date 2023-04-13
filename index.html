@@ -9,7 +9,7 @@
 </head>
 <body>
     <h2>Text box</h2>
-
+<form id="emailForm">
     <label for="tbuser">coach</label>
     <input type="text" id="tbuser" placeholder="Enter Name" maxlength="69">
 
@@ -19,8 +19,23 @@
     <label for="address">Address</label>
     <input type="text" id="address" placeholder="Enter Address" maxlength="69">
 
-    <input type="button" value="Click Me" id="btn1">
+        <input type="radio" id="choice1" name="day" value="Monday">
+        <label for="choice1">Monday</label>
+        <input type="radio" id="choice2" name="day" value="Tuesday">
+        <label for="choice2">Tuesday</label>
+        <input type="radio" id="choice3" name="day" value="Wednesday">
+        <label for="choice3">Wednesday</label>
+        <input type="radio" id="choice4" name="day" value="Thursday">
+        <label for="choice4">Thursday</label>
+        <input type="radio" id="choice5" name="day" value="Friday">
+        <label for="choice5">Friday</label>
+        <input type="radio" id="choice6" name="day" value="Saturday">
+        <label for="choice6">Saturday</label>
+        <input type="radio" id="choice7" name="day" value="Sunday">
+        <label for="choice7">Sunday</label>
 
+<input type="button" value="Click Me" id="btn1">
+</form>
     <p class="output" id="output1"></p>
     <script src="test.js"></script>
 </body>
