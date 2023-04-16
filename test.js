@@ -19,7 +19,7 @@ function fun1(){
     
     School: ${school.value}
     Address: ${address.value}
-    Day: ${day}, 4/11/23 & 4/18/23
+    Day: ${day.value}, 4/11/23 & 4/18/23
     Time: 3:20-4:20pm (arrive by 3:05pm)
     Lesson #8 & 9: Week #8 & 9: Double Attacks / Forks (week 8) & Discovery (week 9)
     You should  still have access to the roster in the 'My Rosters' section of the Chess Emporium Employee website.
