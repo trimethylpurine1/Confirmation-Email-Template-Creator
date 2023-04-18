@@ -1,3 +1,9 @@
-body {
-    background-color: green;
+
+
+#btn2 {
+    display: none;
+}
+
+#offMonth3 {
+    background-color: blue;
 }
