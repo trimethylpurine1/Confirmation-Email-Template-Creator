@@ -24,20 +24,23 @@
     <div>
         <p>Club Day</p>
     </div>
-    <input type="radio" id="choice1" name="day" value="Monday">
-    <label for="choice1">Monday</label>
-    <input type="radio" id="choice2" name="day" value="Tuesday">
-    <label for="choice2">Tuesday</label>
-    <input type="radio" id="choice3" name="day" value="Wednesday">
-    <label for="choice3">Wednesday</label>
-    <input type="radio" id="choice4" name="day" value="Thursday">
-    <label for="choice4">Thursday</label>
-    <input type="radio" id="choice5" name="day" value="Friday">
-    <label for="choice5">Friday</label>
-    <input type="radio" id="choice6" name="day" value="Saturday">
-    <label for="choice6">Saturday</label>
-    <input type="radio" id="choice7" name="day" value="Sunday">
-    <label for="choice7">Sunday</label>
+    <div>
+        <input type="radio" id="choice1" name="day" value="Monday">
+        <label for="choice1">Monday</label>
+        <input type="radio" id="choice2" name="day" value="Tuesday">
+        <label for="choice2">Tuesday</label>
+        <input type="radio" id="choice3" name="day" value="Wednesday">
+        <label for="choice3">Wednesday</label>
+        <input type="radio" id="choice4" name="day" value="Thursday">
+        <label for="choice4">Thursday</label>
+        <input type="radio" id="choice5" name="day" value="Friday">
+        <label for="choice5">Friday</label>
+        <input type="radio" id="choice6" name="day" value="Saturday">
+        <label for="choice6">Saturday</label>
+        <input type="radio" id="choice7" name="day" value="Sunday">
+        <label for="choice7">Sunday</label>
+    </div>
+    
     <br>
     <label for="students">Number Of Students</label>
     <input type="text" id="students" placeholder="Number of Students" maxlength="69">
@@ -190,41 +193,44 @@
         <div>
             <p>Club Start Time</p>
         </div>
-        <select name="startHour" id="startHour">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-        </select>
-
-        <select name="startMinute" id="startMinute">
-            <option value="0">00</option>
-            <option value="5">05</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-            <option value="31">35</option>
-            <option value="31">40</option>
-            <option value="31">45</option>
-            <option value="31">50</option>
-            <option value="31">55</option>
-            <option value="31">00</option>
-        </select>
-
-        <select name="startAmPm" id="startAmPm">
-            <option value="AM">AM</option>
-            <option value="PM">PM</option>
-        </select>
+        <div id="startTime">
+            <select name="startHour" id="startHour">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+    
+            <select name="startMinute" id="startMinute">
+                <option value="0">00</option>
+                <option value="5">05</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="31">35</option>
+                <option value="31">40</option>
+                <option value="31">45</option>
+                <option value="31">50</option>
+                <option value="31">55</option>
+                <option value="31">00</option>
+            </select>
+    
+            <select name="startAmPm" id="startAmPm">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+    
+        </div>
 
         <div>
             <p>Club End Time</p>

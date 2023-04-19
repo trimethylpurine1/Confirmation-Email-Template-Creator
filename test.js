@@ -17,6 +17,9 @@ const startAmPm = document.getElementById('startAmPm');
 const endAmPm = document.getElementById('endAmPm');
 const numberOfStudents = document.getElementById('students')
 const array = []
+const arrayMonth = [];
+const arrayDay = [];
+
 
 function createAnOffDay(){
         for (let i=0; i < weeksOff.value; i++){
@@ -48,16 +51,13 @@ function createAnOffDay(){
                     optionDay.setAttribute('value', i)
                     optionDay.appendChild(dayNum)
                     select2.appendChild(optionDay)
-                }
-                
-        
+                }    
     }
 }
 
 const monthOffObject = {};
 const dayOffObject = {};
-const monthArray = [];
-const dayArray = [];
+
 
 //monthArray.push(monthOffObject['counter' + 1].value)
 function takeWeekOffInfo(){
@@ -68,16 +68,39 @@ function takeWeekOffInfo(){
     }
 }
 
+
 function assignWeekOffinfo(){
+
     for(let i=0; i < weeksOff.value; i++){
        /* let key = `counter${i}`
         monthArray.push(monthOffObject.key)
         dayArray.push(dayOffObject.key) */
-        window['offDay' + i] = dayOffObject['counter' + i].value
-        window['offmonth' + i] = monthOffObject['counter' + i].value
+        arrayMonth.push(window['offDay' + i] = dayOffObject['counter' + i].value)
+        arrayDay.push(window['offmonth' + i] = monthOffObject['counter' + i].value)
+
     }
 }
 
+
+function testIfOffDateHappened(){
+
+    let weekOffArray = []
+    for(let i=0; i < weeksOff.value; i++){
+        if( arrayMonth[i]  < subMonth.value + 1){
+            weekOffArray.push('1')
+        } else if (arrayMonth[i]  < subMonth.value + 1){
+            if (arrayDay < subDay.value){
+                weekOffArray.push('1')
+            }
+        }
+    } 
+    const offDaysThusFar = weekOffArray.length
+    return offDaysThusFar
+}
+
+function getNumberOfWeeks(num1, num2){
+    return num1 - num2
+}
 
 function createDuplicateDates(){
     
@@ -125,7 +148,7 @@ function getDateDifference(){
 }
 
 function createLesson(){
-    const dateDiff = getDateDifference();
+    const dateDiff = getNumberOfWeeks(getDateDifference(), testIfOffDateHappened());
     const arrayKey = dateDiff - 1;
     const lessonArray = [
         'Lesson 1: Piece Name/Value/Movement',
@@ -172,7 +195,7 @@ function emailCreator(){
     let day = getCheckedValue(document.getElementsByName('day'))
     out1.innerHTML = `Hello ${coach.value},
 
-    As we discussed earlier this email is to confirm you will be subbing the ${placeinator(getDateDifference())} day chess club at ${school.value} from ${startHour.value}:${startMinute.value} ${startAmPm.value}-${endHour.value}:${endMinute.value} ${endAmPm.value} (arrive by ${subtractClockByfifteen()}).
+    As we discussed earlier this email is to confirm you will be subbing the ${placeinator(getNumberOfWeeks(getDateDifference(), testIfOffDateHappened()))} day chess club at ${school.value} from ${startHour.value}:${startMinute.value} ${startAmPm.value}-${endHour.value}:${endMinute.value} ${endAmPm.value} (arrive by ${subtractClockByfifteen()}).
     
     There are ${numberOfStudents.value} students in the club.
     
@@ -182,7 +205,7 @@ function emailCreator(){
     Address: ${address.value}
     Day: ${day}, ${Number(subMonth.value) + 1}/${subDay.value}/${subYear.value}
     Time: ${startHour.value}:${startMinute.value} ${startAmPm.value}-${endHour.value}:${endMinute.value} ${endAmPm.value} (arrive by ${subtractClockByfifteen()})
-    Week #${getDateDifference()}: #${createLesson()}
+    Week #${getNumberOfWeeks(getDateDifference(), testIfOffDateHappened())}: #${createLesson()}
     You should  still have access to the roster in the 'My Rosters' section of the Chess Emporium Employee website.
     
     Please reply back here to confirm this sub will work for you for ${day}, ${Number(subMonth.value) + 1}/${subDay.value}/${subYear.value} and let me know if you have any questions.
@@ -205,6 +228,9 @@ function combinor() {
 function combinor2(){
     takeWeekOffInfo();
     assignWeekOffinfo();
+    testIfOffDateHappened();
+    getNumberOfWeeks();
+    emailCreator();
 }
 
 btn1.addEventListener('click', combinor);
